@@ -1,0 +1,130 @@
+.product-card {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  background-color: white;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+}
+
+.product-card__img-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.card__img__vip {
+  position: absolute;
+  top: 0;
+  left: -10px;
+  background-color: var(--background-color);
+  color: red;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 10px;
+  pointer-events: none;
+  z-index: 1;
+}
+.product-card__brand {
+  position: absolute;
+  text-shadow: 1px 1px 1px #000;
+  left: -10px;
+  bottom: 20px;
+  color: #fff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  z-index: 1;
+}
+
+.product-card__img {
+  width: 250px;
+  height: 300px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.product-card__header {
+  padding: 0 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-card__current-price {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.product-card__favourite {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.product-card__favourite.active {
+  color: red;
+}
+
+.favourite__count {
+  margin: 0;
+  font-size: 14px;
+}
+
+.product-card__old-price {
+  padding: 0 10px;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.old-price__value {
+  color: var(--text-hover-color);
+  text-decoration: line-through;
+}
+
+.product-card__title {
+  width: 100%;
+  padding: 0 10px;
+  font-size: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-card__size {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.product-card__size--value {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.product-card__rating {
+  display: flex;
+  gap: 5px;
+  padding: 0 10px;
+  width: 100%;
+  font-weight: 700;
+}
+.product-card__rating--value {
+  font-weight: 400;
+}

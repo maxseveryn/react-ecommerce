@@ -2,6 +2,7 @@ import React from "react";
 import "./Homepage.css";
 import NavBar from "../../components/NavBar/NavBar";
 import ImageSlider from "../../components/ImageSlider/ImageSlider";
+import ProductGrid from "../../components/Products/ProductGrid/ProductGrid";
 
 export default function Homepage() {
   return (
@@ -9,6 +10,7 @@ export default function Homepage() {
       <title>Clothing Shop | Home</title>
       <NavBar />
       <ImageSlider />
+      <ProductGrid />
     </div>
   );
 }

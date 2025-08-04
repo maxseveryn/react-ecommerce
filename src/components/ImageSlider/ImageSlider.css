@@ -38,7 +38,7 @@
 .image-slider__track {
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: inherit;
   height: fit-content;
   aspect-ratio: 16 / 9;
   overflow: hidden;
@@ -57,14 +57,12 @@
 
 .image-slider__image--middle {
   cursor: pointer;
-  width: 70%;
   height: 70%;
   z-index: 2;
 }
 
 .image-slider__image--left,
 .image-slider__image--right {
-  width: 20%;
   height: 50%;
   opacity: 0.5;
   z-index: 1;
@@ -108,4 +106,10 @@
 .image-slider__dot.active {
   background-color: var(--button-color);
   transform: scale(1.2);
+}
+
+@media (max-width: 958px) {
+  .image-slider__track {
+    aspect-ratio: 4 / 3;
+  }
 }

@@ -1,6 +1,7 @@
 .container-wrapper {
   width: 100%;
-  max-width: 1160px;
+  max-width: 1380px;
+  padding: 10px;
 }
 
 .navbar-container {
@@ -10,10 +11,9 @@
 
   display: flex;
   align-items: center;
-  flex-direction: row;
   justify-content: space-between;
-  padding: 10px;
-  margin: 10px;
+  flex-direction: row;
+  padding: 20px 30px;
   transition: all 0.3s ease;
   z-index: 20;
 }
@@ -87,10 +87,6 @@
   gap: 10px;
   height: fit-content;
   min-width: 300px;
-}
-
-.navbar__find.scrolled {
-  background-color: var(--background-color);
 }
 
 .navbar__input {
@@ -199,8 +195,12 @@
 .navbar__menu {
   display: flex;
   align-items: center;
-  background-color: var(--background-color);
+  background-color: transparent;
   gap: 30px;
+}
+
+.navbar__find.scrolled {
+  background-color: var(--background-color);
 }
 
 @media (max-width: 958px) {
@@ -208,14 +208,14 @@
     width: 95%;
   }
   .navbar__find.navbar__find.scrolled {
-    background-color: white;
+    background-color: var(--background-color);
   }
   .brand__logo {
     height: 40px;
   }
   .navbar__hamburger {
     position: absolute;
-    top: 15px;
+    top: 20px;
     right: 30px;
     height: 40px;
     display: block;
@@ -235,17 +235,18 @@
   .navbar__actions {
     height: 40px;
     position: absolute;
-    top: 15px;
+    top: 20px;
     right: 80px;
   }
   .navbar__menu {
     display: flex;
     opacity: 0;
     border-radius: 20px;
+    background-color: var(--background-color);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     flex-direction: column;
     position: absolute;
-    top: 70px;
+    top: 85px;
     z-index: 10;
     padding: 20px 0;
     transition: opacity 0.3s ease;
@@ -255,5 +256,8 @@
     border: 1px solid var(--border-color);
     opacity: 1;
     pointer-events: auto;
+  }
+  .navbar__menu.scrolled {
+    background-color: white;
   }
 }

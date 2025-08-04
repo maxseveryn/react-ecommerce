@@ -73,7 +73,9 @@ export default function NavBar() {
         </div>
 
         <div
-          className={`navbar__menu${isMenuOpen ? " open" : ""}`}
+          className={`navbar__menu${isMenuOpen ? " open" : ""}${
+            scrolled ? " scrolled" : ""
+          }`}
           ref={menuRef}
           aria-expanded={isMenuOpen}
           aria-label="Main menu"
@@ -109,7 +111,7 @@ export default function NavBar() {
                   if (e.key === "Enter" || e.key === " ") toggleDropdown();
                 }}
               >
-                <span className="navbar__dropdown-label">All clothes</span>
+                <span className="navbar__dropdown-label">All products</span>
                 <button
                   className="navbar__button dropdown__button"
                   aria-label="Toggle clothes categories"
