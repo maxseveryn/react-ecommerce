@@ -1,13 +1,13 @@
 .container-wrapper {
   width: 100%;
-  max-width: 1380px;
   padding: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .navbar-container {
   position: fixed;
   width: 95%;
-  max-width: inherit;
 
   display: flex;
   align-items: center;
@@ -238,6 +238,7 @@
     top: 20px;
     right: 80px;
   }
+
   .navbar__menu {
     display: flex;
     opacity: 0;
@@ -247,8 +248,10 @@
     flex-direction: column;
     position: absolute;
     top: 85px;
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 10;
-    padding: 20px 0;
+    padding: 20px;
     transition: opacity 0.3s ease;
     pointer-events: none;
   }

@@ -2,12 +2,11 @@ body {
   background-color: var(--background-color);
 }
 
-.page-container {
+.page-content {
   max-width: 1400px;
   margin: 0 auto;
-
+  margin-top: 100px;
   width: 100%;
-  height: fit-content;
 
   border-color: var(--border-color);
   border-left-width: 1px;

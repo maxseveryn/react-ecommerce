@@ -6,11 +6,13 @@ import ProductGrid from "../../components/Products/ProductGrid/ProductGrid";
 
 export default function Homepage() {
   return (
-    <div className="page-container">
+    <div className="homepage">
       <title>Clothing Shop | Home</title>
       <NavBar />
-      <ImageSlider />
-      <ProductGrid />
+      <div className="page-content">
+        <ImageSlider />
+        <ProductGrid />
+      </div>
     </div>
   );
 }
