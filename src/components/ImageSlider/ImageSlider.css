@@ -1,6 +1,6 @@
 .image-slider {
   position: relative;
-  padding: 100px 0;
+  padding: 50px 0;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -9,22 +9,12 @@
 }
 
 .image-slider__controls {
-  padding: 0 20px;
+  padding: 0px;
   position: absolute;
   width: 100%;
   z-index: 10;
   display: flex;
   justify-content: space-between;
-}
-
-.image-slider__button {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  border: none;
-  cursor: pointer;
 }
 
 .image-slider__button {
@@ -37,48 +27,85 @@
   background: transparent;
   border: none;
   cursor: pointer;
+  color: var(--background-color);
+  transition: color 0.3s ease;
+}
+
+.image-slider__button:hover {
+  color: var(--text-hover-color);
 }
 
 .image-slider__track {
   position: relative;
-  height: 500px;
   width: 100%;
+  max-width: 1200px;
+  height: fit-content;
+  aspect-ratio: 16 / 9;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 }
 
 .image-slider__image {
-  position: absolute;
-  height: 400px;
   object-fit: cover;
-  border-radius: 15px;
   transition: transform 0.3s ease, opacity 0.3s ease;
   will-change: transform, opacity;
+  border-radius: 15px;
 }
 
 .image-slider__image--middle {
-  max-width: 700px;
-  height: auto;
+  cursor: pointer;
+  width: 70%;
+  height: 70%;
   z-index: 2;
-  transform: translateX(-50%);
+}
+
+.image-slider__image--left,
+.image-slider__image--right {
+  width: 20%;
+  height: 50%;
+  opacity: 0.5;
+  z-index: 1;
+  filter: brightness(75%) blur(2px);
+  border-radius: 0;
 }
 
 .image-slider__image--left {
-  max-width: 12vw;
-  max-height: 70vh;
-  height: 400px;
-  left: 0;
-  z-index: 1;
-  filter: blur(2px);
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 .image-slider__image--right {
-  max-width: 12vw;
-  height: 400px;
-  max-height: 70vh;
-  right: 0;
-  filter: blur(2px);
-  z-index: 1;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+
+.image-slider__dots {
+  position: absolute;
+  bottom: 5%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.image-slider__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--border-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.image-slider__dot:hover {
+  background-color: var(--text-hover-color);
+}
+
+.image-slider__dot.active {
+  background-color: var(--button-color);
+  transform: scale(1.2);
 }

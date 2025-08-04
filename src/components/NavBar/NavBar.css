@@ -1,19 +1,21 @@
 .container-wrapper {
   width: 100%;
   max-width: 1160px;
-  padding: 10px 20px;
 }
 
 .navbar-container {
   position: fixed;
-  width: inherit;
+  width: 95%;
   max-width: inherit;
+
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
   padding: 10px;
+  margin: 10px;
   transition: all 0.3s ease;
+  z-index: 20;
 }
 
 .navbar-container.scrolled {
@@ -132,6 +134,10 @@
   cursor: pointer;
 }
 
+.navbar__dropdown-label {
+  text-align: center;
+}
+
 .navbar__dropdown-content {
   opacity: 0;
   transform: translateY(-10px);
@@ -193,18 +199,19 @@
 .navbar__menu {
   display: flex;
   align-items: center;
+  background-color: var(--background-color);
   gap: 30px;
 }
 
 @media (max-width: 958px) {
+  .navbar__find {
+    width: 95%;
+  }
+  .navbar__find.navbar__find.scrolled {
+    background-color: white;
+  }
   .brand__logo {
     height: 40px;
-  }
-  .navbar-container {
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
   }
   .navbar__hamburger {
     position: absolute;
@@ -233,12 +240,12 @@
   }
   .navbar__menu {
     display: flex;
-    width: 100%;
     opacity: 0;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     flex-direction: column;
     position: absolute;
     top: 70px;
-    left: -20px;
     z-index: 10;
     padding: 20px 0;
     transition: opacity 0.3s ease;
