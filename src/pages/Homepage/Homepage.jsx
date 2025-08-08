@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Homepage.css";
-import NavBar from "../../components/NavBar/NavBar.jsx";
-import Footer from "../../components/Footer/Footer.jsx";
 import ImageSlider from "../../components/ImageSlider/ImageSlider.jsx";
 import ProductGrid from "../../components/Products/ProductGrid/ProductGrid.jsx";
-import ScrollTop from "../../components/ScrollTop/ScrollTop.jsx";
-
 export default function Homepage() {
   const [products, setProducts] = useState([]);
 
@@ -19,13 +15,10 @@ export default function Homepage() {
   return (
     <div className="homepage">
       <title>Clothing Shop | Home</title>
-      <NavBar />
       <div className="page-content">
         <ImageSlider />
-        <ProductGrid products={products} />
+        <ProductGrid products={products} productsQuantity={12} />
       </div>
-      <ScrollTop />
-      <Footer />
     </div>
   );
 }

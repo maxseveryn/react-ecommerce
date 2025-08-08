@@ -5,6 +5,7 @@
   --border-color: #e1e2e3;
   --button-color: #242424;
   --text-hover-color: #555;
+  --button-hover-color: #cccccc;
 }
 
 * {
@@ -14,6 +15,10 @@
 
 body {
   font-family: "Roboto", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 a {

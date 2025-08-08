@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./ProductCard.css";
 
 export default function ProductCard({ data }) {
@@ -13,15 +13,21 @@ export default function ProductCard({ data }) {
   return (
     <article className="product-card" aria-label={data.title}>
       <div className="product-card__img-container">
-        {/* <Link to={`/product/${data.id}`} className="product-card__link"> */}
-        <img className="product-card__img" src={data.image} alt={data.title} />
-        {data.status === "vip" && <label className="card__img__vip">VIP</label>}
-        {
-          /*data.brand && */ <p className="product-card__brand">
-            {/*data.brand*/} Maxym Severyn
-          </p>
-        }
-        {/* </Link> */}
+        <Link to={`/product/${data.id}`} className="product-card__link">
+          <img
+            className="product-card__img"
+            src={data.image}
+            alt={data.title}
+          />
+          {data.status === "vip" && (
+            <label className="card__img__vip">VIP</label>
+          )}
+          {
+            /*data.brand && */ <p className="product-card__brand">
+              {/*data.brand*/} Maxym Severyn
+            </p>
+          }
+        </Link>
       </div>
       <div className="product-card__header">
         <p className="product-card__current-price">{data.price} $</p>

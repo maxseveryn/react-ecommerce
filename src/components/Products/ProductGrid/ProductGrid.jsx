@@ -3,8 +3,10 @@ import ProductCard from "../Product/ProductCard.jsx";
 import "./ProductGrid.css";
 
 export default function ProductGrid(props) {
-  const { productsName, products } = props;
-  const [maxItems, setMaxItems] = useState(12);
+  const products = props.products;
+  const productsName = props.productName;
+  const productsQuntity = props.productsQuantity;
+  const [maxItems, setMaxItems] = useState(productsQuntity);
 
   const handleLoadMore = () => {
     setMaxItems((prev) => prev + maxItems);

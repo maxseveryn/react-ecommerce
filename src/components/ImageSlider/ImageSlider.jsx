@@ -64,6 +64,7 @@ export default function ImageSlider() {
           clickable: true,
           dynamicBullets: false,
         }}
+        spaceBetween={20}
         autoplay
         grabCursor
         initialSlide={2}
