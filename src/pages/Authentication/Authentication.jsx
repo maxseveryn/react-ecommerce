@@ -1,17 +1,35 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Authentication.css";
 import logo from "../../assets/logo.png";
 import Login from "../../components/Authentication/Login/Login.jsx";
 import Register from "../../components/Authentication/Register/Register.jsx";
 
-export default function Authentication({ authBlock }) {
-  const [currentBlock, setCurrentBlock] = useState(authBlock);
+export default function Authentication({ authBlock = "login" }) {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const [currentBlock, setCurrentBlock] = useState(() => {
+    if (location.pathname.includes("register")) return "register";
+    if (location.pathname.includes("login")) return "login";
+    return authBlock;
+  });
 
   function updateCurrentBlock(newBlock) {
     setCurrentBlock(newBlock);
-    console.log(newBlock);
+    navigate(`/auth/${newBlock}`, { replace: true });
   }
+
+  useEffect(() => {
+    if (location.pathname.includes("register") && currentBlock !== "register") {
+      setCurrentBlock("register");
+    } else if (
+      location.pathname.includes("login") &&
+      currentBlock !== "login"
+    ) {
+      setCurrentBlock("login");
+    }
+  }, [location.pathname, currentBlock]);
 
   return (
     <div className="authentication-container">

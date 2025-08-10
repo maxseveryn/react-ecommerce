@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import Input from "../Input/Input.jsx";
+import BasicModal from "../../Modal/Modal.jsx";
 import { Link } from "react-router-dom";
 
 export default function Register() {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const success = true;
+
+    if (success) {
+      setModalOpen(true);
+    }
+  };
+
+  const handleClose = () => {
+    setModalOpen(false);
+  };
+
   return (
-    <form className="auth-block">
+    <form className="auth-block" onSubmit={handleSubmit}>
       <Input id="firstName" placeholder="First Name" type="text" required />
       <Input id="secondName" placeholder="Last Name" type="text" required />
       <Input id="email" placeholder="E-mail" type="email" required />
@@ -102,6 +119,7 @@ export default function Register() {
         </a>
       </div>
       <Link className="auth-block__link">Can't register?</Link>
+      <BasicModal open={modalOpen} onClose={handleClose} />
     </form>
   );
 }

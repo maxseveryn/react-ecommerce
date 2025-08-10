@@ -196,14 +196,16 @@ export default function NavBar() {
           </div>
         </div>
         <div className="navbar__actions">
-          <Link to="/auth">
+          <Link to="/auth/login">
             <button className="navbar__login" aria-label="Sign in">
               Sign in
             </button>
           </Link>
-          <button className="navbar__signup" aria-label="Register">
-            Register
-          </button>
+          <Link to="/auth/register">
+            <button className="navbar__signup" aria-label="Register">
+              Register
+            </button>
+          </Link>
         </div>
         <button
           ref={hamburgerRef}

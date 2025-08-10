@@ -12,10 +12,11 @@ import Footer from "./components/Footer/Footer.jsx";
 import Homepage from "./pages/Homepage/Homepage.jsx";
 import ProductDetails from "./pages/ProductDetails/ProductDetails.jsx";
 import Authentication from "./pages/Authentication/Authentication.jsx";
+import NotFound from "./pages/NotFound/NotFound.jsx";
 
 function Layout() {
   const location = useLocation();
-  const hideNavFooterPaths = ["/auth"];
+  const hideNavFooterPaths = ["/auth/login", "/auth/register"];
 
   const hideNavFooter = hideNavFooterPaths.includes(location.pathname);
 
@@ -25,7 +26,15 @@ function Layout() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/product/:id" element={<ProductDetails />} />
-        <Route path="/auth" element={<Authentication authBlock={"login"} />} />
+        <Route
+          path="/auth/login"
+          element={<Authentication authBlock={"login"} />}
+        />
+        <Route
+          path="/auth/register"
+          element={<Authentication authBlock={"register"} />}
+        />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       {!hideNavFooter && <Footer />}
       <ScrollTop />
