@@ -25,7 +25,7 @@ export default function Input({
 
   return (
     <div className={styles.field}>
-      <div className={styles["input-wrapper"]}>
+      <div className={styles.inputWrapper}>
         <input
           id={id}
           type={inputType}

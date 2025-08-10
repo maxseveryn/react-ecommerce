@@ -1,0 +1,9 @@
+.name-inputs-row {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+.input-half {
+  width: 100px;
+}

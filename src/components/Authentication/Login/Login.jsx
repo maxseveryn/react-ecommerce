@@ -9,8 +9,8 @@ export default function Login() {
   };
 
   return (
-    <form className="login-container" onSubmit={handleSubmit}>
-      <Input id="username" placeholder="Username" type="text" required />
+    <form className="auth-block" onSubmit={handleSubmit}>
+      <Input id="email" placeholder="E-mail" type="email" required />
       <Input
         id="password"
         placeholder="Password"
@@ -18,10 +18,12 @@ export default function Login() {
         showToggle={true}
         required
       />
-      <div className="terms-container">
-        <p className="terms-text">By clicking "Login", you accept the </p>
+      <div className="auth-block__terms">
+        <p className="auth-block__terms__text">
+          By clicking "Login", you accept the
+        </p>
         <a
-          className="term-link"
+          className="auth-block__terms__link"
           href="https://github.com/maxseveryn"
           target="_blank"
           rel="noopener noreferrer"
@@ -29,14 +31,14 @@ export default function Login() {
           Terms of the Public Agreement (Offer) for the provision of services
         </a>
       </div>
-      <button type="submit" className="login-button">
+      <button type="submit" className="auth-button">
         Login
       </button>
 
       <p className="separator">or</p>
 
-      <div className="login-social">
-        <Link className="login-social__button">
+      <div className="auth-block__social">
+        <Link className="social__button">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -48,7 +50,7 @@ export default function Login() {
           </svg>
           Continue with phone number
         </Link>
-        <a className="login-social__button" href="https://facebook.com">
+        <a className="social__button" href="https://facebook.com">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -73,7 +75,7 @@ export default function Login() {
           </svg>
           Continue with Facebook
         </a>
-        <a className="login-social__button" href="https://google.com">
+        <a className="social__button" href="https://google.com">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -110,8 +112,8 @@ export default function Login() {
         </a>
       </div>
 
-      <Link className="login-block__link">Reset password</Link>
-      <Link className="login-block__link">Can't login? </Link>
+      <Link className="auth-block__link">Reset password</Link>
+      <Link className="auth-block__link">Can't login? </Link>
     </form>
   );
 }

@@ -1,11 +1,11 @@
-.login-container {
+.auth-block {
   display: flex;
   flex-direction: column;
   gap: 10px;
   width: 100%;
 }
 
-.terms-container {
+.auth-block__terms {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
@@ -14,32 +14,32 @@
   padding: 5px;
 }
 
-.terms-text {
+.auth-block__terms__text {
   margin: 0;
   padding: 0;
 }
 
-.term-link,
-.login-block__link {
+.auth-block__terms__link,
+.auth-block__link {
   color: var(--green-color);
   padding: 0;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-.term-link:hover,
-.login-block__link:hover {
+.auth-block__terms__link:hover,
+.auth-block__link:hover {
   color: var(--green-hover-color);
 }
 
-.login-block__link {
+.auth-block__link {
   font-size: 0.9rem;
   text-align: center;
   padding: 3px 0;
 }
 
-.login-button,
-.login-social__button {
+.auth-button,
+.social__button {
   cursor: pointer;
   border: none;
   background-color: white;
@@ -51,8 +51,8 @@
   transition: all 0.3s ease;
 }
 
-.login-button:hover,
-.login-social__button:hover {
+.auth-button:hover,
+.social__button:hover {
   background-color: var(--button-hover-color);
   color: var(--button-color);
 }
@@ -62,14 +62,14 @@
   text-align: center;
 }
 
-.login-social {
+.auth-block__social {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-bottom: 15px;
 }
 
-.login-social__button {
+.social__button {
   border: 1px solid var(--border-color);
   background-color: transparent;
   color: white;
