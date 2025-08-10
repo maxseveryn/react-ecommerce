@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./NavBar.css";
 import logo from "../../assets/logo.png";
 
@@ -195,9 +196,11 @@ export default function NavBar() {
           </div>
         </div>
         <div className="navbar__actions">
-          <button className="navbar__login" aria-label="Sign in">
-            Sign in
-          </button>
+          <Link to="/auth">
+            <button className="navbar__login" aria-label="Sign in">
+              Sign in
+            </button>
+          </Link>
           <button className="navbar__signup" aria-label="Register">
             Register
           </button>
