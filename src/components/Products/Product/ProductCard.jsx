@@ -1,25 +1,36 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./ProductCard.css";
+import { CartContext } from "../../../context/cartContext";
+import { useContext } from "react";
 
 export default function ProductCard({ data }) {
+  const product = data;
+
   const [isFavourite, setIsFavourite] = useState(false);
   const [favouriteCount, setFavouriteCount] = useState(0);
+
+  const cart = useContext(CartContext);
 
   const toggleFavourite = () => {
     setIsFavourite((prev) => !prev);
     setFavouriteCount((prev) => (isFavourite ? prev - 1 : prev + 1));
   };
+
+  const buyProduct = () => {
+    cart.addOneToCart(product.id);
+  };
+
   return (
-    <article className="product-card" aria-label={data.title}>
+    <article className="product-card" aria-label={product.title}>
       <div className="product-card__img-container">
-        <Link to={`/product/${data.id}`} className="product-card__link">
+        <Link to={`/product/${product.id}`} className="product-card__link">
           <img
             className="product-card__img"
-            src={data.image}
-            alt={data.title}
+            src={product.image}
+            alt={product.title}
           />
-          {data.status === "vip" && (
+          {product.status === "vip" && (
             <label className="card__img__vip">VIP</label>
           )}
           {
@@ -30,7 +41,7 @@ export default function ProductCard({ data }) {
         </Link>
       </div>
       <div className="product-card__header">
-        <p className="product-card__current-price">{data.price} $</p>
+        <p className="product-card__current-price">{product.price} $</p>
         <button
           className={`product-card__favourite ${isFavourite ? "active" : ""}`}
           onClick={toggleFavourite}
@@ -58,17 +69,23 @@ export default function ProductCard({ data }) {
         </button>
       </div>
       <div className="product-card__old-price">
-        {data.oldPrice && <p className="old-price__value">${data.oldPrice}</p>}
+        {product.oldPrice && (
+          <p className="old-price__value">${product.oldPrice}</p>
+        )}
         <div className="old-price__discount">-50%</div>
       </div>
-      <p className="product-card__title">{data.title}</p>
+      <p className="product-card__title">{product.title}</p>
       <div className="product-card__size">
         <p className="product-card__size--value">One Size</p>
         <p className="product-card__size--count">and 6 more</p>
       </div>
       <div className="product-card__rating">
-        Rating:<p className="product-card__rating--value">{data.rating.rate}</p>
+        Rating:
+        <p className="product-card__rating--value">{product.rating.rate}</p>
       </div>
+      <button onClick={buyProduct} className="product-card__buy">
+        Buy
+      </button>
     </article>
   );
 }

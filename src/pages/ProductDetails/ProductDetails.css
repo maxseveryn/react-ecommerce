@@ -164,17 +164,17 @@
   transition: background-color 0.3s ease;
 }
 
-.product-details__button--buy:hover {
+.product-details__button--cart:hover {
   background-color: var(--text-hover-color);
 }
 
-.product-details__button--cart {
+.product-details__button--favourite {
   color: var(--button-color);
   border: 1px solid var(--border-color);
   background-color: transparent;
 }
 
-.product-details__button--cart:hover {
+.product-details__button--favourite:hover {
   background-color: var(--button-hover-color);
 }
 

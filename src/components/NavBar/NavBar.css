@@ -213,13 +213,13 @@
 .navbar_shopping-cart--quantity {
   position: absolute;
   bottom: -15px;
-  right: -5px;
-  width: 20px;
+  right: -15px;
+  width: 24px;
   text-align: center;
-  background-color: red;
   border-radius: 50%;
   padding: 1px;
-  color: white;
+  color: var(--green-color);
+  font-weight: 550;
 }
 
 .navbar_shopping-cart:hover {

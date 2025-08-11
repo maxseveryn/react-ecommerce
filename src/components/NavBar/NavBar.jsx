@@ -1,9 +1,10 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import Dialog from "@mui/material/Dialog";
 import ShoppingCart from "../../components/ShoppingCart/ShoppingCart.jsx";
 import "./NavBar.css";
 import logo from "../../assets/logo.png";
+import { CartContext } from "../../context/cartContext.js";
 
 export default function NavBar() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -14,6 +15,8 @@ export default function NavBar() {
   const dropdownRef = useRef(null);
   const menuRef = useRef(null);
   const hamburgerRef = useRef(null);
+
+  const { getTotalQuantity } = useContext(CartContext);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -228,7 +231,9 @@ export default function NavBar() {
                 </g>
               </g>
             </svg>
-            <span className="navbar_shopping-cart--quantity">0</span>
+            <span className="navbar_shopping-cart--quantity">
+              {getTotalQuantity()}
+            </span>
           </div>
           <Dialog open={isCartOpen} onClose={() => setIsCartOpen(false)}>
             <ShoppingCart onClose={() => setIsCartOpen(false)} />

@@ -51,11 +51,11 @@ export default function ProductDetails() {
           <p className="product-details__size">36 / S / 44</p>
 
           <div className="product-details__actions">
-            <button className="product-details__button product-details__button--buy">
-              Buy
-            </button>
             <button className="product-details__button product-details__button--cart">
-              Add to Cart
+              Add to cart
+            </button>
+            <button className="product-details__button product-details__button--favourite">
+              Favourite
             </button>
           </div>
         </div>

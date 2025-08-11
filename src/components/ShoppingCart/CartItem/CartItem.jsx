@@ -1,24 +1,32 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import { CartContext } from "../../../context/cartContext.js";
+import { Link } from "react-router-dom";
 import "./CartItem.css";
 import Counter from "../Counter";
 
-export default function CartItem() {
+export default function CartItem({ product, quantity, onClose }) {
+  const cart = useContext(CartContext);
+  if (!product) return null;
   return (
     <div className="cart-item">
       <div className="cart-item__image-container">
-        {" "}
         <img
           className="cart-item__image"
-          src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSY9bGA936HmRl1qt1fbPDkj-8nz1tmHNOsRf65RBw7Cpt_5BnpueYSbAIsqBDAFHqX2icGubW8vusgyrvYOwu5TGug9uT7FKG9hWvenUXaXJiy5UJPGkwD"
-          alt=""
+          src={product.image}
+          alt={product.title}
         />
       </div>
 
       <div className="cart-item__info">
-        <div className="cart-item__info--title">
-          Apple MacBook Air 13.6" M4 2025
-        </div>
+        <Link
+          to={`/product/${product.id}`}
+          onClick={() => {
+            onClose();
+            setTimeout(() => {}, 100);
+          }}
+        >
+          <div className="cart-item__info--title">{product.title}</div>
+        </Link>
         <div className="cart-item__info--status">In Stock</div>
         <div className="cart-item__info--color">
           <div
@@ -29,7 +37,12 @@ export default function CartItem() {
         </div>
 
         <div className="cart-item__info--actions">
-          <button className="cart-item__info--btn cart-item__info--remove">
+          <button
+            onClick={() => {
+              cart.deleteFromCart(product.id);
+            }}
+            className="cart-item__info--btn cart-item__info--remove"
+          >
             <svg
               width="24px"
               height="24px"
@@ -82,8 +95,14 @@ export default function CartItem() {
         </div>
       </div>
       <div className="cart-item__final">
-        <span className="cart-item__final--price">$1,000</span>
-        <Counter />
+        <span className="cart-item__final--price">
+          ${(product.price * quantity).toFixed(2)}
+        </span>
+        <Counter
+          quantity={quantity}
+          onIncrement={() => cart.addOneToCart(product.id)}
+          onDecrement={() => cart.removeOneFromCart(product.id)}
+        />
       </div>
     </div>
   );

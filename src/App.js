@@ -14,10 +14,12 @@ import ProductDetails from "./pages/ProductDetails/ProductDetails.jsx";
 import Authentication from "./pages/Authentication/Authentication.jsx";
 import NotFound from "./pages/NotFound/NotFound.jsx";
 
+import { CartProvider } from "./context/CartProvider.jsx";
+import { ProductsProvider } from "./context/ProductsProvider.jsx";
+
 function Layout() {
   const location = useLocation();
   const hideNavFooterPaths = ["/auth/login", "/auth/register"];
-
   const hideNavFooter = hideNavFooterPaths.includes(location.pathname);
 
   return (
@@ -45,7 +47,11 @@ function Layout() {
 function App() {
   return (
     <Router>
-      <Layout />
+      <ProductsProvider>
+        <CartProvider>
+          <Layout />
+        </CartProvider>
+      </ProductsProvider>
     </Router>
   );
 }
