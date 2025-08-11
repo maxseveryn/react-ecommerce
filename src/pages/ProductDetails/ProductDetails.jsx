@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./ProductDetails.css";
 
 export default function ProductDetails() {
@@ -208,7 +209,7 @@ export default function ProductDetails() {
               </button>
             </div>
             <div className="product-description--extra__report">
-              <a href="#" className="report-link">
+              <Link className="report-link">
                 <svg
                   width="40px"
                   height="40px"
@@ -223,7 +224,7 @@ export default function ProductDetails() {
                   />
                 </svg>
                 <p>Report a violation</p>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

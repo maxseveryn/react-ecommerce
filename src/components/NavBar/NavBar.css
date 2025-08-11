@@ -203,6 +203,29 @@
   background-color: var(--background-color);
 }
 
+.navbar_shopping-cart {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+.navbar_shopping-cart--quantity {
+  position: absolute;
+  bottom: -15px;
+  right: -5px;
+  width: 20px;
+  text-align: center;
+  background-color: red;
+  border-radius: 50%;
+  padding: 1px;
+  color: white;
+}
+
+.navbar_shopping-cart:hover {
+  color: var(--text-hover-color);
+}
+
 @media (max-width: 958px) {
   .navbar__find {
     width: 95%;
@@ -222,7 +245,6 @@
   }
 
   .navbar__find {
-    order: 2;
     margin: 0 auto;
   }
 
@@ -251,7 +273,7 @@
     left: 50%;
     transform: translateX(-50%);
     z-index: 10;
-    padding: 20px;
+    padding: 30px 10px;
     transition: opacity 0.3s ease;
     pointer-events: none;
   }
