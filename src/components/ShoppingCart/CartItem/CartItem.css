@@ -25,11 +25,12 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  width: 100%;
 }
 
 .cart-item__info--status {
-  background-color: var(--light-green-color);
-  color: white;
+  background-color: var(--success);
+  color: var(--btn-primary-text);
   font-size: 0.8rem;
   font-weight: 550;
   padding: 8px;
@@ -46,7 +47,7 @@
 .cart-item__info--color-text {
   font-size: 0.8rem;
   font-weight: 500;
-  color: var(--text-hover-color);
+  color: var(--text-secondary);
 }
 
 .cart-item__info--color-value {
@@ -77,16 +78,16 @@
   gap: 5px;
   font-size: 0.9rem;
   font-weight: 500;
-  color: var(--text-hover-color);
+  color: var(--text-secondary);
   transition: color 0.3s ease;
   cursor: pointer;
 }
 
 .cart-item__info--remove:hover {
-  color: red;
+  color: var(--btn-fav-color);
 }
 .cart-item__info--save:hover {
-  color: rgb(230, 195, 0);
+  color: var(--accent-secondary);
 }
 
 @media (max-width: 500px) {

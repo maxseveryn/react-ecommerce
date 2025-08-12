@@ -5,6 +5,7 @@
   flex-direction: column;
   align-items: center;
   gap: 20px;
+  color: var(--text-primary);
 }
 
 .products__grid {
@@ -16,6 +17,7 @@
 }
 
 .products-view-more {
+  color: var(--text-primary);
   background-color: transparent;
   border: none;
   font-weight: 500;
@@ -26,6 +28,6 @@
 }
 
 .products-view-more:hover {
-  color: var(--text-hover-color);
+  color: var(--text-secondary);
   transform: scale(1.02);
 }

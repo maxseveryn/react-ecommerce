@@ -1,16 +1,57 @@
 @import "normalize.css";
 
 :root {
-  --background-color: #f4f4f4;
-  --border-color: #e1e2e3;
-  --button-color: #242424;
-  --text-hover-color: #555;
-  --button-hover-color: #c2c1c1;
-  --button-active-color: #2e2e2e;
-  --outline-color: #0056b3;
-  --light-green-color: rgb(33, 190, 33);
-  --green-color: rgb(0, 167, 0);
-  --green-hover-color: rgb(1, 145, 1);
+  --bg-color: #f9fafb;
+  --bg-secondary-color: #f9fafb;
+  --text-primary: #111827;
+  --text-secondary: #606c7e;
+  --accent-primary: #2563eb;
+  --accent-secondary: #f97316;
+  --border-color: #e5e7eb;
+  --success: #16a34a;
+  --error: #dc2626;
+
+  --btn-primary-bg: #000000;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: #202020;
+  --btn-primary-active: #1a1a1a;
+
+  --btn-secondary-bg: #1f1f1f;
+  --btn-secondary-text: #e5e5e5;
+  --btn-secondary-hover: #2a2a2a;
+  --btn-secondary-active: #333333;
+  --btn-secondary-border: #333333;
+
+  --btn-fav-color: #dc2626;
+  --btn-fav-hover: #b91c1c;
+  --btn-fav-active: #991b1b;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0c0e0e;
+  --bg-secondary-color: #1d1d1d;
+  --text-primary: #f9fafb;
+  --text-secondary: #9ca3af;
+  --accent-primary: #3b82f6;
+  --accent-secondary: #fb923c;
+  --border-color: #1f2937;
+  --success: #22c55e;
+  --error: #ef4444;
+
+  --btn-primary-bg: #111111;
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: #1a1a1a;
+  --btn-primary-active: #262626;
+
+  --btn-secondary-bg: #2a2a2a;
+  --btn-secondary-text: #f0f0f0;
+  --btn-secondary-hover: #333333;
+  --btn-secondary-active: #404040;
+  --btn-secondary-border: #4d4d4d;
+
+  --btn-fav-color: #ef4444;
+  --btn-fav-hover: #dc2626;
+  --btn-fav-active: #b91c1c;
 }
 
 * {

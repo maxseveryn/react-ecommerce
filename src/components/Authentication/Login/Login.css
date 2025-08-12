@@ -21,7 +21,7 @@
 
 .auth-block__terms__link,
 .auth-block__link {
-  color: var(--green-color);
+  color: var(--success);
   padding: 0;
   font-weight: 500;
   transition: color 0.3s ease;
@@ -42,8 +42,8 @@
 .social__button {
   cursor: pointer;
   border: none;
-  background-color: white;
-  color: var(--button-color);
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
   font-size: 1rem;
   font-weight: 600;
   height: 45px;
@@ -53,8 +53,8 @@
 
 .auth-button:hover,
 .social__button:hover {
-  background-color: var(--button-hover-color);
-  color: var(--button-color);
+  background-color: var(--btn-primary-hover);
+  color: var(--btn-secondary-text);
 }
 
 .separator {
@@ -71,8 +71,8 @@
 
 .social__button {
   border: 1px solid var(--border-color);
-  background-color: transparent;
-  color: white;
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
   display: flex;
   align-items: center;
   justify-content: center;

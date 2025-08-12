@@ -1,16 +1,10 @@
 body {
-  background-color: var(--background-color);
+  background-color: var(--bg-color);
 }
 
 .page-content {
   max-width: 1400px;
   margin: 0 auto;
-  margin-top: 100px;
+  margin-top: 50px;
   width: 100%;
-
-  border-color: var(--border-color);
-  border-left-width: 1px;
-  border-right-width: 1px;
-  border-style: solid;
-  border-top-width: 0px;
 }

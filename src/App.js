@@ -14,8 +14,9 @@ import ProductDetails from "./pages/ProductDetails/ProductDetails.jsx";
 import Authentication from "./pages/Authentication/Authentication.jsx";
 import NotFound from "./pages/NotFound/NotFound.jsx";
 
-import { CartProvider } from "./context/CartProvider.jsx";
-import { ProductsProvider } from "./context/ProductsProvider.jsx";
+import { CartProvider } from "./context/CartProvider.js";
+import { ProductsProvider } from "./context/ProductsProvider.js";
+import { ThemeProvider } from "./context/ThemeProvider.js";
 
 function Layout() {
   const location = useLocation();
@@ -49,7 +50,9 @@ function App() {
     <Router>
       <ProductsProvider>
         <CartProvider>
-          <Layout />
+          <ThemeProvider>
+            <Layout />
+          </ThemeProvider>
         </CartProvider>
       </ProductsProvider>
     </Router>

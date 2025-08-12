@@ -1,6 +1,6 @@
 .slider-container {
   width: 100%;
-  padding: 20px;
+  margin-top: 100px;
 }
 
 .swiper-slide {
@@ -42,7 +42,7 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  color: white;
+  color: var(--btn-primary-text);
   background: rgba(31, 31, 31, 0.4);
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
@@ -73,7 +73,7 @@
 }
 
 .slider__category span {
-  background-color: var(--button-color);
+  background-color: var(--btn-primary-bg);
   padding: 5px 10px;
   border-radius: 10px;
   font-size: 0.8rem;
@@ -82,8 +82,8 @@
 .slider__button {
   padding: 8px 15px;
   border: none;
-  background: #222;
-  color: white;
+  background: var(--btn-primary-bg);
+  color: var(--text-primary);
   border-radius: 10px;
   cursor: pointer;
   transition: background 0.3s ease;
@@ -101,14 +101,14 @@
 .slider-container .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: var(--button-color);
+  background-color: var(--text-primary);
   border-radius: 50%;
 }
 
 .slider-container .swiper-pagination-bullet-active {
   width: 32px;
   border-radius: 14px;
-  background-color: var(--button-hover-color);
+  background-color: var(--btn-secondary-hover);
 }
 
 @media (max-width: 958px) {

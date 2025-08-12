@@ -39,7 +39,7 @@ export default function ShoppingCart({ onClose }) {
       </div>
       {cart.items.length === 0 ? (
         <div className="shopping-cart__empty">
-          Cart is currently empty
+          Cart is currently empty :(
           <img className="not-found__img" src={pandaImg} alt="" />
           <button className="shopping-cart__empty-button" onClick={onClose}>
             Go Shopping

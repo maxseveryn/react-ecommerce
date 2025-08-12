@@ -24,8 +24,7 @@
 
 .input:focus {
   outline: none;
-  border-color: var(--outline-color);
-  box-shadow: 0 0 3px var(--outline-color);
+  box-shadow: 0 0 3px var(--border-color);
 }
 
 .inputError {
@@ -50,11 +49,11 @@
 }
 
 .input__eye:hover {
-  color: var(--text-hover-color);
+  color: var(--text-secondary);
 }
 
 .errorMessage {
-  color: red;
+  color: var(--error);
   font-size: 12px;
   margin-top: 4px;
   padding-left: 5px;

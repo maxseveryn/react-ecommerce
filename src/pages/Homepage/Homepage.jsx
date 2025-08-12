@@ -8,8 +8,8 @@ export default function Homepage() {
   return (
     <div className="homepage">
       <title>Clothing Shop | Home</title>
+      <ImageSlider />
       <div className="page-content">
-        <ImageSlider />
         <ProductGrid products={products} productsQuantity={12} />
       </div>
     </div>

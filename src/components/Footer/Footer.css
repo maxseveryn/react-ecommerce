@@ -3,8 +3,8 @@
   flex-direction: row;
   align-items: center;
 
-  background-color: var(--background-color);
-
+  background-color: var(--bg-color);
+  color: var(--text-primary);
   width: 100%;
   padding: 30px 50px;
 }
@@ -36,7 +36,7 @@
 }
 
 .footer__link:hover {
-  color: var(--text-hover-color);
+  color: var(--text-secondary);
 }
 
 .footer__contact-item {
@@ -49,18 +49,18 @@
   gap: 20px;
 }
 .footer__icon {
-  color: var(--button-color);
+  color: var(--text-primary);
   font-size: 1.5rem;
   transition: color 0.3s ease;
 }
 
 .footer__icon:hover {
-  color: var(--text-hover-color);
+  color: var(--text-secondary);
 }
 
 @media (max-width: 958px) {
   .footer {
     flex-direction: column;
-    gap: 20px;
+    gap: 50px;
   }
 }

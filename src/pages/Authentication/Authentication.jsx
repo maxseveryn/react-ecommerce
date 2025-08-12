@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import "./Authentication.css";
-import logo from "../../assets/logo.png";
+import DarkLogo from "../../assets/dark_logo.png";
+import LightLogo from "../../assets/light_logo.png";
 import Login from "../../components/Authentication/Login/Login.jsx";
 import Register from "../../components/Authentication/Register/Register.jsx";
+import { ThemeContext } from "../../context/ThemeProvider.js";
 
 export default function Authentication({ authBlock = "login" }) {
   const navigate = useNavigate();
   const location = useLocation();
+
+  const { theme } = useContext(ThemeContext);
 
   const [currentBlock, setCurrentBlock] = useState(() => {
     if (location.pathname.includes("register")) return "register";
@@ -36,7 +40,11 @@ export default function Authentication({ authBlock = "login" }) {
       <title>Clothing Shop | Authentication</title>
       <Link to="/">
         <div className="auth-logo">
-          <img className="brand__logo" src={logo} alt="Shop logo" />
+          <img
+            className="brand__logo"
+            src={theme === "dark" ? LightLogo : DarkLogo}
+            alt="Shop logo"
+          />
         </div>
       </Link>
       <div className="authentication-block">

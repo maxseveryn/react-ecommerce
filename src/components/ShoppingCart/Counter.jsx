@@ -20,7 +20,11 @@ export default function Counter({ quantity, onIncrement, onDecrement }) {
         value={quantity}
         size="small"
         inputProps={{
-          style: { textAlign: "center", padding: "2px" },
+          style: {
+            textAlign: "center",
+            padding: "2px",
+            color: "#16a34a",
+          },
           readOnly: true,
         }}
         sx={{ width: 40 }}
