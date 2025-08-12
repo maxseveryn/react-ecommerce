@@ -5,6 +5,8 @@
   justify-content: center;
   align-items: center;
   padding: 0 16px;
+  color: var(--text-primary);
+  gap: 20px;
 }
 
 .not_found-img {

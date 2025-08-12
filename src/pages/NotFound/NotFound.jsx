@@ -9,7 +9,7 @@ export default function NotFound() {
       <title>PixelValley - Not Found</title>
       <img className="not-found__img" src={inDevelopmentImg} alt="" />
       <h1>404</h1>
-      <h3>This page is currently unavailable</h3>
+      <h3>This content is currently unavailable :( </h3>
     </div>
   );
 }

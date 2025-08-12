@@ -159,6 +159,10 @@
   transition: background-color 0.3s ease;
 }
 
+.product-card__buy:hover {
+  background-color: var(--btn-primary-hover);
+}
+
 .alert-top {
   position: fixed;
   top: 120px;
