@@ -176,11 +176,12 @@
 .product-details__button--favourite {
   color: var(--btn-primary-text);
   border: 1px solid var(--border-color);
-  background-color: transparent;
+  background-color: var(--btn-secondary-bg);
 }
 
 .product-details__button--favourite:hover {
-  background-color: var(--btn-primary-hover);
+  color: var(--btn-primary-bg);
+  background-color: var(--btn-secondary-text);
 }
 
 .product-details__seller {

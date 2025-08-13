@@ -284,7 +284,10 @@ export default function NavBar() {
           </div>
 
           <Dialog open={isCartOpen} onClose={() => setIsCartOpen(false)}>
-            <ShoppingCart onClose={() => setIsCartOpen(false)} />
+            <ShoppingCart
+              onClose={() => setIsCartOpen(false)}
+              checkout={true}
+            />
           </Dialog>
         </div>
 

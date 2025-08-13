@@ -1,0 +1,29 @@
+.shipping-form {
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid var(--border-color);
+  padding: 20px;
+  border-radius: 15px;
+  min-width: 300px;
+}
+
+.shipping-form__inputs {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  color: var(--text-secondary);
+  padding: 5px;
+  font-size: 0.9rem;
+  font-weight: 550;
+  margin: 5px 0;
+}
+
+@media (max-width: 1200px) {
+  .shipping-form {
+    width: 100%;
+  }
+}

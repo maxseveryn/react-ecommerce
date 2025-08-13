@@ -7,6 +7,8 @@ export function CartProvider({ children }) {
     const storedCart = localStorage.getItem("cart");
     return storedCart ? JSON.parse(storedCart) : [];
   });
+  const shipping = 16;
+  const vat = 0.2;
 
   const { products } = useProducts();
 
@@ -61,7 +63,7 @@ export function CartProvider({ children }) {
     return products.find((p) => p.id === id);
   }
 
-  function getTotalCost() {
+  function getSubtotalCost() {
     return cartProducts.reduce((total, cartItem) => {
       const productData = getProductData(cartItem.id);
       return productData
@@ -70,12 +72,23 @@ export function CartProvider({ children }) {
     }, 0);
   }
 
-  function getTotalQuantity() {
-    return cartProducts.reduce(
-      (total, cartItem) => total + cartItem.quantity,
-      0
-    );
-  }
+  const getShipping = () => {
+    return shipping;
+  };
+
+  const getVatCost = () => {
+    const subtotal = getSubtotalCost();
+    return subtotal * vat;
+  };
+
+  const getTotalQuantity = () =>
+    cartProducts.reduce((total, cartItem) => total + cartItem.quantity, 0);
+
+  const getTotalCost = () => {
+    const subtotal = getSubtotalCost();
+    const vatCost = getVatCost();
+    return subtotal + vatCost + shipping;
+  };
 
   const contextValue = {
     items: cartProducts,
@@ -83,6 +96,9 @@ export function CartProvider({ children }) {
     addOneToCart,
     removeOneFromCart,
     deleteFromCart,
+    getSubtotalCost,
+    getVatCost,
+    getShipping,
     getTotalCost,
     getTotalQuantity,
   };

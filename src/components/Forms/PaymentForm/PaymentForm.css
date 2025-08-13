@@ -1,0 +1,48 @@
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.payment-form h2 {
+  color: var(--text-primary);
+  font-size: 1.3rem;
+  padding: 5px;
+}
+
+.payment-form__inputs {
+  border: 1px solid var(--border-color);
+  padding: 35px 20px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.payment-form__row {
+  display: flex;
+  gap: 5px;
+  justify-content: flex-start;
+}
+.payment-form__row input {
+  width: 75px;
+  height: 40px;
+  padding: 8px 10px;
+  font-size: 14px;
+}
+.payment-form__submit {
+  cursor: pointer;
+  padding: 15px;
+  border: 2px solid var(--border-color);
+  border-radius: 15px;
+  background-color: var(--btn-primary-bg);
+
+  color: var(--btn-primary-text);
+  font-size: 1rem;
+  font-weight: 650;
+  transition: background-color 0.3s ease;
+}
+
+.payment-form__submit:hover {
+  background-color: var(--success);
+}

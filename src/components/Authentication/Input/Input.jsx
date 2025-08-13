@@ -4,10 +4,14 @@ import styles from "./Input.module.css";
 
 export default function Input({
   id,
+  pattern,
+  autocomplete,
+  maxlength,
   placeholder,
   type = "text",
   showToggle = false,
   required = false,
+  onChange,
   ...props
 }) {
   const [show, setShow] = useState(false);
@@ -28,6 +32,10 @@ export default function Input({
       <div className={styles.inputWrapper}>
         <input
           id={id}
+          pattern={pattern}
+          autoComplete={autocomplete}
+          maxLength={maxlength}
+          onChange={onChange}
           type={inputType}
           placeholder={placeholder}
           className={`${styles.input} ${error ? styles.inputError : ""}`}

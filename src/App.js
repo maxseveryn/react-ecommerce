@@ -13,6 +13,7 @@ import Homepage from "./pages/Homepage/Homepage.jsx";
 import ProductDetails from "./pages/ProductDetails/ProductDetails.jsx";
 import Authentication from "./pages/Authentication/Authentication.jsx";
 import NotFound from "./pages/NotFound/NotFound.jsx";
+import Checkout from "./pages/Checkout/Checkout.jsx";
 
 import { CartProvider } from "./context/CartProvider.js";
 import { ProductsProvider } from "./context/ProductsProvider.js";
@@ -29,6 +30,7 @@ function Layout() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/checkout" element={<Checkout />} />
         <Route
           path="/auth/login"
           element={<Authentication authBlock={"login"} />}

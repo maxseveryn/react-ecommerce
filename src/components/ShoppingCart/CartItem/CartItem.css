@@ -3,9 +3,8 @@
   width: 100%;
   height: fit-content;
   justify-content: space-between;
-  padding: 20px 10px;
+  padding: 15px 10px;
   gap: 15px;
-  border-top: 2px solid var(--border-color);
   border-bottom: 2px solid var(--border-color);
 }
 
@@ -25,7 +24,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 100%;
+  justify-content: space-between;
 }
 
 .cart-item__info--status {
@@ -64,6 +63,9 @@
   padding: 0 10px;
 }
 
+.product__quantity {
+  color: var(--success);
+}
 .cart-item__info--actions {
   display: flex;
   gap: 20px;
