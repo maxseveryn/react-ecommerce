@@ -202,7 +202,6 @@
 .navbar__menu {
   display: flex;
   align-items: center;
-  background-color: var(--bg-color);
   gap: 30px;
 }
 

@@ -47,6 +47,7 @@ export default function ProductCard({ data }) {
               className="product-card__img"
               src={product.image}
               alt={product.title}
+              loading="lazy"
             />
             {product.status === "vip" && (
               <label className="card__img__vip">VIP</label>

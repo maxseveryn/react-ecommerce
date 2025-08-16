@@ -7,7 +7,7 @@
       rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.6)
     ),
-    url("../../assets/auth_bg.jpg") center/cover no-repeat;
+    url("../../assets/auth_bg.webp") center/cover no-repeat;
 
   display: flex;
   flex-direction: column;
@@ -52,7 +52,7 @@
 }
 
 .authentication-block--button {
-  background-color: var(--bg-color);
+  background-color: var(--btn-secondary-bg);
   color: var(--btn-primary-text);
   font-weight: 600;
   font-size: 1rem;
@@ -65,7 +65,7 @@
 }
 
 .authentication-block--button--active {
-  background-color: var(--btn-primary-active);
+  background-color: var(--btn-secondary-active);
   color: var(--btn-primary-text);
   border: 2px solid var(--border-color);
 }

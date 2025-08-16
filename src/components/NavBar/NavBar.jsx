@@ -86,6 +86,7 @@ export default function NavBar() {
               className="brand__logo"
               src={theme === "dark" ? LightLogo : DarkLogo}
               alt="Shop logo"
+              loading="lazy"
             />
           </a>
         </div>

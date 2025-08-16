@@ -1,12 +1,12 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import Slide1 from "../../assets/slider-images/clothes_1.jpg";
-import Slide2 from "../../assets/slider-images/clothes_2.jpg";
-import Slide3 from "../../assets/slider-images/clothes_3.jpg";
-import Slide4 from "../../assets/slider-images/clothes_4.jpg";
-import Slide5 from "../../assets/slider-images/clothes_5.jpg";
-import Slide6 from "../../assets/slider-images/clothes_6.jpg";
+import Slide1 from "../../assets/slider-images/clothes_1.webp";
+import Slide2 from "../../assets/slider-images/clothes_2.webp";
+import Slide3 from "../../assets/slider-images/clothes_3.webp";
+import Slide4 from "../../assets/slider-images/clothes_4.webp";
+import Slide5 from "../../assets/slider-images/clothes_5.webp";
+import Slide6 from "../../assets/slider-images/clothes_6.webp";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -79,6 +79,7 @@ export default function ImageSlider() {
               className="slider__image"
               src={slide.imgSrc}
               alt={slide.title}
+              loading="lazy"
             />
             <div className="slider__content">
               <div className="slider__header">
