@@ -4,8 +4,9 @@ import "./ProductGrid.css";
 
 export default function ProductGrid(props) {
   const products = props.products;
-  const productsName = props.productName;
+  const productsName = props.productsName;
   const productsQuntity = props.productsQuantity;
+  const small = props.small;
   const [maxItems, setMaxItems] = useState(productsQuntity);
 
   const handleLoadMore = () => {
@@ -14,10 +15,10 @@ export default function ProductGrid(props) {
 
   return (
     <div className="products-container">
-      <h1 className="products__name">{productsName}VIP</h1>
+      <h1 className="products__name">{productsName}</h1>
       <div className="products__grid" role="list" tabIndex="-1">
         {products?.slice(0, maxItems).map((product) => (
-          <ProductCard key={product.id} data={product} />
+          <ProductCard key={product.id} data={product} small={small} />
         ))}
       </div>
 

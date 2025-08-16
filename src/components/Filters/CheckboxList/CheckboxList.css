@@ -1,0 +1,10 @@
+.checkbox__label,
+.checkbox__box {
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+}
+
+.checkbox__label:hover {
+  color: var(--text-secondary);
+}

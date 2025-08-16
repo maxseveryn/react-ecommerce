@@ -1,0 +1,31 @@
+.filters {
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 400px;
+  user-select: none;
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+}
+
+.filter-label {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.filter__content {
+  padding: 10px 10px;
+}
+
+.filters__title {
+  font-size: 1.5rem;
+  font-weight: 550;
+}
+
+.filter__sections {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

@@ -10,7 +10,11 @@ export default function Homepage() {
       <title>Clothing Shop | Home</title>
       <ImageSlider />
       <div className="page-content">
-        <ProductGrid products={products} productsQuantity={12} />
+        <ProductGrid
+          products={products}
+          productsQuantity={12}
+          productsName="Vip"
+        />
       </div>
     </div>
   );

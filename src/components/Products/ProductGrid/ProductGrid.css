@@ -1,5 +1,4 @@
 .products-container {
-  padding: 0 30px;
   padding-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -10,10 +9,10 @@
 
 .products__grid {
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   gap: 10px;
-  place-items: center;
 }
 
 .products-view-more {

@@ -1,0 +1,24 @@
+.dropdown-menu,
+.dropdown-menu__item {
+  list-style: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
+  width: fit-content;
+  padding: 0;
+  user-select: none;
+}
+
+.dropdown-menu:hover,
+.dropdown-menu__item:hover {
+  color: var(--text-secondary);
+}
+
+.dropdown-menu__item > div {
+  font-size: 0.9rem;
+  padding: 10px 0;
+}
+
+.dropdown-menu__item__submenu {
+  padding: 0 15px;
+}

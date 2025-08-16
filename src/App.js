@@ -18,6 +18,7 @@ import Checkout from "./pages/Checkout/Checkout.jsx";
 import { CartProvider } from "./context/CartProvider.js";
 import { ProductsProvider } from "./context/ProductsProvider.js";
 import { ThemeProvider } from "./context/ThemeProvider.js";
+import Favourite from "./pages/Favourite/Favourite.jsx";
 
 function Layout() {
   const location = useLocation();
@@ -30,6 +31,7 @@ function Layout() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/product/:id" element={<ProductDetails />} />
+        <Route path="/favourite" element={<Favourite />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route
           path="/auth/login"

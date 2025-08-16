@@ -7,7 +7,7 @@ import "./ProductCard.css";
 import { CartContext } from "../../../context/cartContext";
 import { useContext } from "react";
 
-export default function ProductCard({ data }) {
+export default function ProductCard({ data, small }) {
   const product = data;
 
   const [isFavourite, setIsFavourite] = useState(false);
@@ -40,27 +40,40 @@ export default function ProductCard({ data }) {
           </Alert>
         </div>
       )}
-      <article className="product-card" aria-label={product.title}>
+      <article
+        className={`product-card ${small ? "product-card--small" : ""}`}
+        aria-label={product.title}
+      >
         <div className="product-card__img-container">
           <Link to={`/product/${product.id}`} className="product-card__link">
             <img
-              className="product-card__img"
+              className={`product-card__img ${
+                small ? "product-card__img--small" : ""
+              }`}
               src={product.image}
               alt={product.title}
               loading="lazy"
             />
-            {product.status === "vip" && (
-              <label className="card__img__vip">VIP</label>
-            )}
+            {"vip" && <label className="card__img__vip">VIP</label>}
             {
-              /*data.brand && */ <p className="product-card__brand">
+              /*data.brand && */ <p
+                className={`product-card__brand ${
+                  small ? "product-card__brand--small" : ""
+                }`}
+              >
                 {/*data.brand*/} Maxym Severyn
               </p>
             }
           </Link>
         </div>
         <div className="product-card__header">
-          <p className="product-card__current-price">{product.price} $</p>
+          <p
+            className={`product-card__current-price ${
+              small ? "product-card__current-price--small" : ""
+            }`}
+          >
+            {product.price} $
+          </p>
           <button
             className={`product-card__favourite ${isFavourite ? "active" : ""}`}
             onClick={toggleFavourite}
@@ -93,7 +106,13 @@ export default function ProductCard({ data }) {
           )}
           <div className="old-price__discount">-50%</div>
         </div>
-        <p className="product-card__title">{product.title}</p>
+        <p
+          className={`product-card__title ${
+            small ? "product-card__title--small" : ""
+          }`}
+        >
+          {product.title}
+        </p>
         <div className="product-card__size">
           <p className="product-card__size--value">One Size</p>
           <p className="product-card__size--count">and 6 more</p>
@@ -102,7 +121,12 @@ export default function ProductCard({ data }) {
           Rating:
           <p className="product-card__rating--value">{product.rating.rate}</p>
         </div>
-        <button onClick={buyProduct} className="product-card__buy">
+        <button
+          onClick={buyProduct}
+          className={`product-card__buy ${
+            small ? "product-card__buy--small" : ""
+          }`}
+        >
           Buy
         </button>
       </article>
