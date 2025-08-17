@@ -1,6 +1,6 @@
 {
-  "homepage": "http://maxseveryn.github.io/react-ecommerce",
-  "name": "frontend",
+  "homepage": "https://maxseveryn.github.io/react-ecommerce",
+  "name": "react-ecommerce",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
