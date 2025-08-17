@@ -1,0 +1,33 @@
+{
+  "files": {
+    "main.css": "/react-ecommerce/static/css/main.c7bba083.css",
+    "main.js": "/react-ecommerce/static/js/main.e073f13f.js",
+    "static/media/auth_bg.webp": "/react-ecommerce/static/media/auth_bg.9014cdffc183907f549a.webp",
+    "static/media/dark_logo.png": "/react-ecommerce/static/media/dark_logo.0d175552e6b848204ec3.png",
+    "static/media/6.svg": "/react-ecommerce/static/media/6.212796b07ecc3af21a7cd4236ab1e7de.svg",
+    "static/media/clothes_5.webp": "/react-ecommerce/static/media/clothes_5.e2ce19b99c8edabd8696.webp",
+    "static/media/clothes_4.webp": "/react-ecommerce/static/media/clothes_4.650713e23c2d4c02cb61.webp",
+    "static/media/clothes_1.webp": "/react-ecommerce/static/media/clothes_1.f16f10a2f28c3764a542.webp",
+    "static/media/8.svg": "/react-ecommerce/static/media/8.023af4502a45bf44e37093d5053f44a9.svg",
+    "static/media/light_logo.png": "/react-ecommerce/static/media/light_logo.522633c2ff1b8038d603.png",
+    "static/media/panda.png": "/react-ecommerce/static/media/panda.14da29046869c2e9d6bf.png",
+    "static/media/clothes_2.webp": "/react-ecommerce/static/media/clothes_2.e7ec72fe57e610cfa20c.webp",
+    "static/media/clothes_6.webp": "/react-ecommerce/static/media/clothes_6.a90d62a194172904ba16.webp",
+    "static/media/clothes_3.webp": "/react-ecommerce/static/media/clothes_3.4a0ff5e6bf7c7fcc2cc3.webp",
+    "static/media/5.svg": "/react-ecommerce/static/media/5.4d5a8694eae88f4430c18ca8482c3ff0.svg",
+    "static/media/9.svg": "/react-ecommerce/static/media/9.800cc4e1aba864843caccec3720f9368.svg",
+    "static/media/10.svg": "/react-ecommerce/static/media/10.0971a68749dc3770c482ba3589121f8f.svg",
+    "static/media/4.svg": "/react-ecommerce/static/media/4.7541f6a08038dd291ed07d0d23ea8a98.svg",
+    "static/media/7.svg": "/react-ecommerce/static/media/7.b47f5dbe23bf48832b094d0de9d19d6c.svg",
+    "static/media/3.svg": "/react-ecommerce/static/media/3.25b43ca1554cbd477ad7fd127c9de788.svg",
+    "static/media/2.svg": "/react-ecommerce/static/media/2.1313fbcb5ec0f3632242a9d77fd9ea0c.svg",
+    "static/media/1.svg": "/react-ecommerce/static/media/1.43c26a0f019ed7a93c11e046d59a5130.svg",
+    "index.html": "/react-ecommerce/index.html",
+    "main.c7bba083.css.map": "/react-ecommerce/static/css/main.c7bba083.css.map",
+    "main.e073f13f.js.map": "/react-ecommerce/static/js/main.e073f13f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c7bba083.css",
+    "static/js/main.e073f13f.js"
+  ]
+}
