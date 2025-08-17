@@ -8,11 +8,11 @@
 }
 
 .products__grid {
-  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
-  gap: 10px;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
 }
 
 .products-view-more {

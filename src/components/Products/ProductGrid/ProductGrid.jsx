@@ -5,9 +5,9 @@ import "./ProductGrid.css";
 export default function ProductGrid(props) {
   const products = props.products;
   const productsName = props.productsName;
-  const productsQuntity = props.productsQuantity;
+  const productsQuantity = props.productsQuantity;
   const small = props.small;
-  const [maxItems, setMaxItems] = useState(productsQuntity);
+  const [maxItems, setMaxItems] = useState(productsQuantity);
 
   const handleLoadMore = () => {
     setMaxItems((prev) => prev + maxItems);
@@ -21,7 +21,6 @@ export default function ProductGrid(props) {
           <ProductCard key={product.id} data={product} small={small} />
         ))}
       </div>
-
       {maxItems < products.length && (
         <button className="products-view-more" onClick={handleLoadMore}>
           View more...

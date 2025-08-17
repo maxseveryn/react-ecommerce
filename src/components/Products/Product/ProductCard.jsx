@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Alert from "@mui/material/Alert";
 import CheckIcon from "@mui/icons-material/Check";
 
@@ -11,15 +11,33 @@ export default function ProductCard({ data, small }) {
   const product = data;
 
   const [isFavourite, setIsFavourite] = useState(false);
-  const [favouriteCount, setFavouriteCount] = useState(0);
   const [showAlert, setShowAlert] = useState(false);
 
   const cart = useContext(CartContext);
 
   const toggleFavourite = () => {
-    setIsFavourite((prev) => !prev);
-    setFavouriteCount((prev) => (isFavourite ? prev - 1 : prev + 1));
+    const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+
+    const exists = favourites.find((item) => item.id === product.id);
+
+    let updatedFavourites;
+    if (exists) {
+      updatedFavourites = favourites.filter((item) => item.id !== product.id);
+      setIsFavourite(false);
+    } else {
+      updatedFavourites = [...favourites, product];
+      setIsFavourite(true);
+    }
+
+    localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
   };
+
+  useEffect(() => {
+    const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+    const exists = favourites.find((item) => item.id === product.id);
+
+    setIsFavourite(!!exists);
+  }, [product.id]);
 
   const buyProduct = () => {
     cart.addOneToCart(product.id);
@@ -82,7 +100,7 @@ export default function ProductCard({ data, small }) {
               isFavourite ? "Remove from favourites" : "Add to favourites"
             }
           >
-            <p className="favourite__count">{favouriteCount}</p>
+            <p className="favourite__count"></p>
             <svg
               className="favourite__icon"
               width="20px"

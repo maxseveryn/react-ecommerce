@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Filters from "../../components/Filters/Filters";
 import ProductGrid from "../../components/Products/ProductGrid/ProductGrid";
-import { useProducts } from "../../context/productsContext.js";
 
 import "./Favourite.css";
 
 export default function Favourite() {
-  const { products } = useProducts();
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    const saved = JSON.parse(localStorage.getItem("favourites")) || [];
+    setProducts(saved);
+  }, []);
+
   const [selectedFilters, setSelectedFilters] = useState({
     categories: [],
     prices: [],
@@ -61,20 +67,53 @@ export default function Favourite() {
       </div>
       <div className="favourite__content">
         <h1>Favourite</h1>
-        <div className="favourite__selected-filters">
-          {Object.entries(selectedFilters).map(([filterName, values]) =>
-            values.map((value) => (
+        {products.length > 0 ? (
+          <>
+            <div className="favourite__selected-filters">
+              {Object.entries(selectedFilters).map(([filterName, values]) =>
+                values.map((value) => (
+                  <div
+                    key={`${filterName}-${value}`}
+                    className="favourite__selected-filters__filter"
+                    onClick={() => {
+                      setSelectedFilters((prev) => ({
+                        ...prev,
+                        [filterName]: prev[filterName].filter(
+                          (v) => v !== value
+                        ),
+                      }));
+                    }}
+                  >
+                    {value}
+                    <svg
+                      width="24px"
+                      height="24px"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        clipRule="evenodd"
+                        d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </div>
+                ))
+              )}
               <div
-                key={`${filterName}-${value}`}
-                className="favourite__selected-filters__filter"
+                className="favourite__selected-filters__filter clear__filters"
                 onClick={() => {
-                  setSelectedFilters((prev) => ({
-                    ...prev,
-                    [filterName]: prev[filterName].filter((v) => v !== value),
-                  }));
+                  setSelectedFilters({
+                    categories: [],
+                    prices: [],
+                    brands: [],
+                    colors: [],
+                  });
                 }}
               >
-                {value}
+                Reset filters
                 <svg
                   width="24px"
                   height="24px"
@@ -90,39 +129,21 @@ export default function Favourite() {
                   />
                 </svg>
               </div>
-            ))
-          )}
-          <div
-            className="favourite__selected-filters__filter clear__filters"
-            onClick={() => {
-              setSelectedFilters({
-                categories: [],
-                prices: [],
-                brands: [],
-                colors: [],
-              });
-            }}
-          >
-            Reset filters
-            <svg
-              width="24px"
-              height="24px"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z"
-                fill="currentColor"
-              />
-            </svg>
+            </div>
+            <div className="favourite__products">
+              <ProductGrid products={filteredProducts} small={true} />
+            </div>
+          </>
+        ) : (
+          <div className="favourite-empty">
+            <p className="favourite-empty__text">
+              Favourite is currently empty
+            </p>
+            <Link to="/">
+              <button className="favourite-empty__button">Homepage</button>
+            </Link>
           </div>
-        </div>
-        <div className="favourite__products">
-          <ProductGrid products={filteredProducts} small={true} />
-        </div>
+        )}
       </div>
     </div>
   );
