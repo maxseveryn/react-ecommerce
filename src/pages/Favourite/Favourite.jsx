@@ -59,6 +59,7 @@ export default function Favourite() {
 
   return (
     <div className="favourite">
+      <title>Clothing Shop | Favourite</title>
       <div className="favourite__filters">
         <Filters
           selectedFilters={selectedFilters}

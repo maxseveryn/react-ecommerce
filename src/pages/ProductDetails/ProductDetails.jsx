@@ -19,6 +19,12 @@ export default function ProductDetails() {
       .catch((err) => console.error("Error fetching product:", err));
   }, [id]);
 
+  useEffect(() => {
+    if (product) {
+      document.title = `Clothing Shop | ${product.title}`;
+    }
+  }, [product]);
+
   function buyProduct() {
     cart.addOneToCart(product.id);
     setShowAlert(true);
@@ -80,9 +86,9 @@ export default function ProductDetails() {
               >
                 Add to cart
               </button>
-              <button className="product-details__button product-details__button--favourite">
+              {/* <button className="product-details__button product-details__button--favourite">
                 Favourite
-              </button>
+              </button> */}
             </div>
           </div>
 
