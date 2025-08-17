@@ -14,14 +14,15 @@ import ProductDetails from "./pages/ProductDetails/ProductDetails.jsx";
 import Authentication from "./pages/Authentication/Authentication.jsx";
 import NotFound from "./pages/NotFound/NotFound.jsx";
 import Checkout from "./pages/Checkout/Checkout.jsx";
+import Favourite from "./pages/Favourite/Favourite.jsx";
 
 import { CartProvider } from "./context/CartProvider.js";
 import { ProductsProvider } from "./context/ProductsProvider.js";
 import { ThemeProvider } from "./context/ThemeProvider.js";
-import Favourite from "./pages/Favourite/Favourite.jsx";
 
 function Layout() {
   const location = useLocation();
+
   const hideNavFooterPaths = ["/auth/login", "/auth/register"];
   const hideNavFooter = hideNavFooterPaths.includes(location.pathname);
 
@@ -35,11 +36,11 @@ function Layout() {
         <Route path="/checkout" element={<Checkout />} />
         <Route
           path="/auth/login"
-          element={<Authentication authBlock={"login"} />}
+          element={<Authentication authBlock="login" />}
         />
         <Route
           path="/auth/register"
-          element={<Authentication authBlock={"register"} />}
+          element={<Authentication authBlock="register" />}
         />
         <Route path="*" element={<NotFound />} />
       </Routes>

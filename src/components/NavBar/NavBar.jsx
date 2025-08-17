@@ -80,14 +80,14 @@ export default function NavBar() {
     <div className="container-wrapper">
       <nav className={`navbar-container ${scrolled ? "scrolled" : ""}`}>
         <div className="navbar__brand">
-          <a href="/" aria-label="Home">
+          <Link to="/" aria-label="Home">
             <img
               className="brand__logo"
               src={theme === "dark" ? LightLogo : DarkLogo}
               alt="Shop logo"
               loading="lazy"
             />
-          </a>
+          </Link>
         </div>
 
         <div
@@ -100,19 +100,19 @@ export default function NavBar() {
         >
           <ul className="navbar__links">
             <li className="link__item">
-              <a href="/new" tabIndex="0">
+              <Link to="/new" tabIndex="0">
                 New
-              </a>
+              </Link>
             </li>
             <li className="link__item">
-              <a href="/sales" tabIndex="0">
+              <Link to="/sales" tabIndex="0">
                 Sales
-              </a>
+              </Link>
             </li>
             <li className="link__item">
-              <a href="/partnership" tabIndex="0">
+              <Link to="/partnership" tabIndex="0">
                 Partnership
-              </a>
+              </Link>
             </li>
           </ul>
           <div className={`navbar__find ${scrolled ? "scrolled" : ""}`}>
