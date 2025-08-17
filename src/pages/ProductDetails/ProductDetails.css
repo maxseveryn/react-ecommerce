@@ -222,3 +222,25 @@
     order: 2;
   }
 }
+
+@media (max-width: 478px) {
+  .product-details__title {
+    font-size: 1.2rem;
+  }
+  .product-details__actions {
+    padding: 0 5px;
+  }
+  .product-details__button {
+    width: 100%;
+  }
+
+  .product-details__seller {
+    text-align: center;
+  }
+  .product-description--value {
+    max-width: 100%;
+  }
+  .report-link {
+    font-size: 0.9rem;
+  }
+}

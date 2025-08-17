@@ -9,12 +9,11 @@
 .navbar-container {
   position: fixed;
   width: 95%;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-direction: row;
-  padding: 20px 30px;
+  padding: 20px 15px;
   transition: all 0.3s ease;
   z-index: 999;
 }
@@ -268,7 +267,7 @@
   .navbar__hamburger {
     position: absolute;
     top: 20px;
-    right: 30px;
+    right: 10px;
     height: 40px;
     display: block;
   }
@@ -288,7 +287,7 @@
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    right: -15px;
+    right: -35px;
   }
 
   .navbar__menu {
@@ -314,5 +313,9 @@
   }
   .navbar__menu.scrolled {
     background-color: var(--bg-secondary-color);
+  }
+
+  .navbar__dropdown-label {
+    font-size: 0.9rem;
   }
 }

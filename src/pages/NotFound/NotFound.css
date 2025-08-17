@@ -18,3 +18,9 @@
 .not_found h1 {
   font-size: 3rem;
 }
+
+@media (max-width: 478px) {
+  .not-found__img {
+    max-width: 100%;
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Dialog from "@mui/material/Dialog";
 
 import { SunIcon, MoonIcon } from "lucide-react";
@@ -23,6 +23,12 @@ export default function NavBar() {
 
   const { getTotalQuantity } = useContext(CartContext);
   const { theme, toggleTheme } = useContext(ThemeContext);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
 
   useEffect(() => {
     const handleScroll = () => {

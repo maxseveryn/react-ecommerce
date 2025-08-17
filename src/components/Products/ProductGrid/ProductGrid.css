@@ -32,3 +32,15 @@
   color: var(--text-secondary);
   transform: scale(1.02);
 }
+
+@media (max-width: 478px) {
+  .products__grid {
+    gap: 8px;
+  }
+  .products__name {
+    font-size: 1.5rem;
+  }
+  .products-view-more {
+    font-size: 1rem;
+  }
+}

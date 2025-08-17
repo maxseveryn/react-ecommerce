@@ -83,7 +83,7 @@
   padding: 8px 15px;
   border: none;
   background: var(--btn-primary-bg);
-  color: var(--text-primary);
+  color: var(--btn-primary-text);
   border-radius: 10px;
   cursor: pointer;
   transition: background 0.3s ease;
@@ -111,9 +111,33 @@
   background-color: var(--btn-secondary-hover);
 }
 
-@media (max-width: 958px) {
+@media (max-width: 478px) {
   .swiper-slide {
     width: 90% !important;
     max-width: 600px;
+    height: 200px;
+  }
+  .slider-container .swiper-pagination {
+    margin-top: 35px;
+  }
+  .slider-container .swiper-pagination .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+  }
+
+  .slider-container .swiper-pagination-bullet-active {
+    width: 16px;
+  }
+
+  .slider__content {
+    bottom: -25px;
+  }
+
+  .slider__title {
+    font-size: 0.8rem;
+  }
+
+  .slider__text-box {
+    font-size: 0.8rem;
   }
 }

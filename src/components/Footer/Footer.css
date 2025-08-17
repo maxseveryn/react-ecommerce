@@ -58,9 +58,20 @@
   color: var(--text-secondary);
 }
 
-@media (max-width: 958px) {
+@media (max-width: 758px) {
   .footer {
     flex-direction: column;
     gap: 50px;
+  }
+}
+
+@media (max-width: 478px) {
+  .footer__section-title {
+    font-size: 1.3rem;
+  }
+  .footer__description,
+  .footer__contact-item,
+  .footer__links {
+    font-size: 0.9rem;
   }
 }

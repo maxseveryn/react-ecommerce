@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useProducts } from "../../context/productsContext.js";
 import "./Homepage.css";
 import ImageSlider from "../../components/ImageSlider/ImageSlider.jsx";
@@ -20,6 +20,15 @@ export default function Homepage() {
   const { products } = useProducts();
   const imgs = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10];
 
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <div className="homepage">
       <title>Clothing Shop | Home</title>
@@ -29,6 +38,7 @@ export default function Homepage() {
           products={products}
           productsQuantity={12}
           productsName="Vip"
+          small={isMobile}
         />
       </div>
       <Marquee items={imgs} />
