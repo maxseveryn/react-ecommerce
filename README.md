@@ -46,5 +46,5 @@ npm install
 ```bash
 npm start
 ```
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser
-The page reloads automatically on file changes
+- Open [http://localhost:3000](http://localhost:3000) to view it in your browser
+- The page reloads automatically on file changes
