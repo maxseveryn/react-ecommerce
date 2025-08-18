@@ -15,6 +15,10 @@ Responsive e-commerce interface built with **React.js**.
 A clean and responsive e-commerce interface created using React.js.  
 This project was bootstrapped with **Create React App**.
 
+<p align="center">
+  <img src="preview/homepage_preview.png" alt="App Preview" width="600"/>
+</p>
+
 ---
 
 ## Features  
